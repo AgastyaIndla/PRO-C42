@@ -1,4 +1,2 @@
 # p5.play-boilerplate
-
-
- https://agastyaindla.github.io/PRO-C42/
+Boiler plate for p5.play

@@ -6,7 +6,7 @@ const Constraint = Matter.Constraint;
 var engine;
 var world;
 var player;
-var bubble;
+var enemy;
 var bullet;
 
 function setup() {
@@ -15,9 +15,9 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  player = new Player(350,350); 
+  player = new Player(350,700); 
 
-  enemy = new Enemy(200,200,30);
+  enemy = new Enemy();
 }
 
 function draw() { 
@@ -28,3 +28,9 @@ function draw() {
   player.display();
   enemy.display();
 }
+
+function mouseMoved(){
+  Matter.Body.setPosition(this.ball, {x: mouseX , y: mouseY});
+}
+
+

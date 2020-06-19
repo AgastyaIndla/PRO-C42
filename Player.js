@@ -4,6 +4,7 @@ class Player {
         this.width = width;
         this.height = height;
         World.add(world, this.body);
+        
     }
 
     display(){
