@@ -29,8 +29,8 @@ function draw() {
   enemy.display();
 }
 
-function mouseMoved(){
-  Matter.Body.setPosition(this.ball, {x: mouseX , y: mouseY});
+function mouseDragged(){
+  Matter.Body.setPosition(player.body, {x: mouseX , y: mouseY});
 }
 
 

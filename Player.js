@@ -8,10 +8,11 @@ class Player {
     }
 
     display(){
-        var pos = this.body.position;
+        var position = [this.body.position.x, this.body.position.y];
             rectMode(CENTER);
-            fill(255);
-            rect(pos.x, pos.y,40,40);
+            fill(255,0,0);
+            rect(position.x, position.y,90,40);
 
     }
+    
 }

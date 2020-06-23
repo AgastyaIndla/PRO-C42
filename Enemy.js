@@ -15,17 +15,15 @@ class Enemy{
         this.velocity += this.gravity
         this.velocity *= 0.9;
         this.y += this.velocity;
+     }
 
-        distance : this.distance 
+       // if(this.y > height){
+         //   this.y = height;
+          //  this.velocity = 0;
+        //}/
 
-        if(this.y > height){
-            this.y = height;
-            this.velocity = 0;
-        }
-
-        if(this.y < 0){
-            this.y = 0;
-            this.velocity = 0;
-        }
+        //if//(this.y < 0){
+          //  this.y = 0;
+        //    //this.velocity = 0;
+        //}
     }
-}
