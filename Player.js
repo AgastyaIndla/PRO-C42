@@ -1,18 +1,28 @@
 class Player {
-    constructor(x,y,width,height){
-        this.body = Bodies.rectangle(x,y,width,height);
-        this.width = width;
-        this.height = height;
-        World.add(world, this.body);
-        
-    }
+    constructor(x, y, width, height) {
+      var options={
+        isStatic:true
+      }
+      this.body = Bodies.rectangle(x, y, width, height, options);
+      this.width = width;
+      this.height = height;
 
+    }
     display(){
-        var position = [this.body.position.x, this.body.position.y];
-            rectMode(CENTER);
-            fill(255,0,0);
-            rect(position.x, position.y,90,40);
+      this.body.position.x = mouseX;
 
+      if(keyCode===32){
+        console.log("Working");
     }
+  
+
+      var pos =this.body.position;
     
-}
+      rectMode(CENTER);
+      fill(255);
+      strokeWeight(7);
+      stroke("turquoise");
+      rect(pos.x,pos.y, this.width, this.height);
+      
+    }
+  };

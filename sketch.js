@@ -10,27 +10,36 @@ var enemy;
 var bullet;
 
 function setup() {
-  createCanvas(700,700);
+  createCanvas(1000,600);
 
   engine = Engine.create();
-  world = engine.world;
+  world = Engine.world;
 
-  player = new Player(350,700); 
+  player = new Player(mouseX,height,100,50);
+  
+  cLocation();
+}
 
-  enemy = new Enemy();
+
+function cLocation(){
+  enemy = new Enemy(floor(random(1,1000)),100);
 }
 
 function draw() { 
   text("x:"+mouseX,50,50); 
   text("y:"+mouseY,50,70);
   
-  background(0,100); 
+  background(0); 
   player.display();
   enemy.display();
+  enemy.update();
+
+  drawSprites();
 }
 
 function mouseDragged(){
   Matter.Body.setPosition(player.body, {x: mouseX , y: mouseY});
 }
+
 
 
