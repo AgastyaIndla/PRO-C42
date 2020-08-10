@@ -1,45 +1,20 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
-
-var engine;
-var world;
+var heading=0;
 var player;
-var enemy;
-var bullet;
+var enemy = [];
 
 function setup() {
-  createCanvas(1000,600);
-
-  engine = Engine.create();
-  world = Engine.world;
-
-  player = new Player(mouseX,height,100,50);
-  
-  cLocation();
+  createCanvas(400,400);
+  player = new Player();
+  for(i=0;i<300;i++){
+    enemy.push(new Enemy());
+  }
 }
 
-
-function cLocation(){
-  enemy = new Enemy(floor(random(1,1000)),100);
-}
-
-function draw() { 
-  text("x:"+mouseX,50,50); 
-  text("y:"+mouseY,50,70);
-  
-  background(0); 
+function draw() {
+  background(0,0,0);  
   player.display();
-  enemy.display();
-  enemy.update();
-
-  drawSprites();
+  for(i=0;i<15;i++){
+    enemy[i].display();
+    enemy[i].move();
+  }
 }
-
-function mouseDragged(){
-  Matter.Body.setPosition(player.body, {x: mouseX , y: mouseY});
-}
-
-
-

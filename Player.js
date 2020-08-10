@@ -1,28 +1,23 @@
-class Player {
-    constructor(x, y, width, height) {
-      var options={
-        isStatic:true
-      }
-      this.body = Bodies.rectangle(x, y, width, height, options);
-      this.width = width;
-      this.height = height;
+class Player{
+  constructor(){
+     
+  }
 
-    }
-    display(){
-      this.body.position.x = mouseX;
-
-      if(keyCode===32){
-        console.log("Working");
-    }
-  
-
-      var pos =this.body.position;
-    
-      rectMode(CENTER);
+  display(){
+      push();
       fill(255);
-      strokeWeight(7);
-      stroke("turquoise");
-      rect(pos.x,pos.y, this.width, this.height);
-      
-    }
-  };
+      translate(200,200);
+      rotate(heading);
+      triangle(-10,10,10,10,0,-10);
+      pop();
+      if(keyDown(RIGHT_ARROW)){
+          heading+=10;
+      }
+      if(keyDown(LEFT_ARROW)){
+          heading-=10;
+      }
+       
+  }
+    
+  
+}
