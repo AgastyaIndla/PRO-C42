@@ -1,20 +1,20 @@
 class Enemy{
     constructor(){
-        this.interiorWidth = random(width);
-        this.interiorHeight = random(height);
+        this.iWidth = random(width);
+        this.iHeight = random(height);
         this.Velocity = random(0.1,0.5);
     }
 
     display(){
         push();
-        noFill();
+        fill("Lightgrey");
         stroke("white");
-        ellipse(this.interiorWidth,this.interiorHeight,20,20);
+        ellipse(this.iWidth,this.iHeight,25,25);
         pop();
     }
 
     move(){
-        this.interiorWidth+=this.Velocity;
-        this.interiorHeight+=this.Velocity;
+        this.iWidth+=this.Velocity;
+        this.iHeight+=this.Velocity;
     }
 }
